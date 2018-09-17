@@ -12,7 +12,7 @@ struct NetworkClient {
     
     static let url = URL(string: "https://studentdirectory.vapor.cloud/students")!
     
-    func fetchRecipes(completion: @escaping ([Student]?, Error?) -> Void) {
+    func fetchStudents(completion: @escaping ([Student]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: NetworkClient.url) { (data, _, error) in
             if let error = error {
                 completion(nil, error)

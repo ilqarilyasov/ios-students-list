@@ -37,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		826B2CD2215007BA00F67466 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D59B90B211812FA002FB7CD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9D59B8FB211812F9002FB7CD = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +64,9 @@
 		9D59B906211812F9002FB7CD /* Students */ = {
 			isa = PBXGroup;
 			children = (
-				9D59B907211812F9002FB7CD /* AppDelegate.swift */,
 				9D59B92221181364002FB7CD /* Model */,
 				9D59B91F2118133F002FB7CD /* Networking */,
+				826B2CD2215007BA00F67466 /* View */,
 				9D59B91921181300002FB7CD /* Resources */,
 			);
 			path = Students;
@@ -67,7 +75,7 @@
 		9D59B91921181300002FB7CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9D59B90B211812FA002FB7CD /* Main.storyboard */,
+				9D59B907211812F9002FB7CD /* AppDelegate.swift */,
 				9D59B90E211812FA002FB7CD /* Assets.xcassets */,
 				9D59B910211812FA002FB7CD /* LaunchScreen.storyboard */,
 				9D59B913211812FA002FB7CD /* Info.plist */,

@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let networkClient = NetworkClient()
     private var students: [Student] = [] {
         didSet {
-            studentsTableViewController.students = students
+            updateSort()
         }
     }
     
@@ -38,7 +38,17 @@ class MainViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: Any) {
-        
+        updateSort()
+    }
+    
+    private func updateSort() {
+        let sortedStudents: [Student]
+        if sortSelector.selectedSegmentIndex == 0 {
+            sortedStudents = students.sorted { $0.firstName < $1.firstName }
+        } else {
+            sortedStudents = students.sorted { ($0.lastName ?? "") < ($1.lastName ?? "") }
+        }
+        studentsTableViewController.students = sortedStudents
     }
     
     // MARK: - Navigation

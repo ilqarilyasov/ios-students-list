@@ -15,7 +15,7 @@ struct Student: Codable {
         return String(name.split(separator: " ")[0])
     }
     
-    var LastName: String? {
+    var lastName: String? {
         guard let last = name.split(separator: " ").dropFirst().last else { return nil }
         return String(last)
     }

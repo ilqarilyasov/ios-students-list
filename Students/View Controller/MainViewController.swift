@@ -36,19 +36,20 @@ class MainViewController: UIViewController {
         }
     }
     
-    
     @IBAction func sort(_ sender: Any) {
         updateSort()
     }
     
     private func updateSort() {
-        let sortedStudents: [Student]
-        if sortSelector.selectedSegmentIndex == 0 {
-            sortedStudents = students.sorted { $0.firstName < $1.firstName }
-        } else {
-            sortedStudents = students.sorted { ($0.lastName ?? "") < ($1.lastName ?? "") }
+        DispatchQueue.main.async {
+            let sortedStudents: [Student]
+            if self.sortSelector.selectedSegmentIndex == 0 {
+                sortedStudents = self.students.sorted { $0.firstName < $1.firstName }
+            } else {
+                sortedStudents = self.students.sorted { ($0.lastName ?? "") < ($1.lastName ?? "") }
+            }
+            self.studentsTableViewController.students = sortedStudents
         }
-        studentsTableViewController.students = sortedStudents
     }
     
     // MARK: - Navigation

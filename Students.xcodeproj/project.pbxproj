@@ -7,27 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		826B2CD421500C6B00F67466 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B2CD321500C6B00F67466 /* MainViewController.swift */; };
-		826B2CD721500C9300F67466 /* StudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B2CD621500C9300F67466 /* StudentsTableViewController.swift */; };
 		9D59B908211812F9002FB7CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59B907211812F9002FB7CD /* AppDelegate.swift */; };
 		9D59B90D211812FA002FB7CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D59B90B211812FA002FB7CD /* Main.storyboard */; };
 		9D59B90F211812FA002FB7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D59B90E211812FA002FB7CD /* Assets.xcassets */; };
 		9D59B912211812FA002FB7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D59B910211812FA002FB7CD /* LaunchScreen.storyboard */; };
-		9D59B92121181348002FB7CD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59B92021181348002FB7CD /* NetworkClient.swift */; };
-		9D59B9242118136C002FB7CD /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59B9232118136C002FB7CD /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		826B2CD321500C6B00F67466 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		826B2CD621500C9300F67466 /* StudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewController.swift; sourceTree = "<group>"; };
 		9D59B904211812F9002FB7CD /* Students.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Students.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D59B907211812F9002FB7CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D59B90C211812FA002FB7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D59B90E211812FA002FB7CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D59B911211812FA002FB7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D59B913211812FA002FB7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D59B92021181348002FB7CD /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		9D59B9232118136C002FB7CD /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +44,6 @@
 		826B2CD521500C7000F67466 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				826B2CD321500C6B00F67466 /* MainViewController.swift */,
-				826B2CD621500C9300F67466 /* StudentsTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -100,7 +90,6 @@
 		9D59B91F2118133F002FB7CD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				9D59B92021181348002FB7CD /* NetworkClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -108,7 +97,6 @@
 		9D59B92221181364002FB7CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9D59B9232118136C002FB7CD /* Student.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,11 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D59B92121181348002FB7CD /* NetworkClient.swift in Sources */,
 				9D59B908211812F9002FB7CD /* AppDelegate.swift in Sources */,
-				9D59B9242118136C002FB7CD /* Student.swift in Sources */,
-				826B2CD721500C9300F67466 /* StudentsTableViewController.swift in Sources */,
-				826B2CD421500C6B00F67466 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

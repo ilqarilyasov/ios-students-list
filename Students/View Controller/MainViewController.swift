@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
                 return
             }
             
-            
+            self.students = students ?? []
         }
     }
     

@@ -14,7 +14,9 @@ class StudentsTableViewController: UITableViewController {
     
     var students: [Student] = [] {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     

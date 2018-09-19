@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82F0444A2152E47000591F4B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F044492152E47000591F4B /* NetworkClient.swift */; };
+		82F0444C2152E4FE00591F4B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0444B2152E4FE00591F4B /* Student.swift */; };
 		9D59B908211812F9002FB7CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59B907211812F9002FB7CD /* AppDelegate.swift */; };
 		9D59B90D211812FA002FB7CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D59B90B211812FA002FB7CD /* Main.storyboard */; };
 		9D59B90F211812FA002FB7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D59B90E211812FA002FB7CD /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82F044492152E47000591F4B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		82F0444B2152E4FE00591F4B /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9D59B904211812F9002FB7CD /* Students.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Students.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D59B907211812F9002FB7CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D59B90C211812FA002FB7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		9D59B91F2118133F002FB7CD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				82F044492152E47000591F4B /* NetworkClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 		9D59B92221181364002FB7CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82F0444B2152E4FE00591F4B /* Student.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D59B908211812F9002FB7CD /* AppDelegate.swift in Sources */,
+				82F0444C2152E4FE00591F4B /* Student.swift in Sources */,
+				82F0444A2152E47000591F4B /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

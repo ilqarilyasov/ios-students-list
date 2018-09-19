@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oXe-Y9-7vW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guL-pm-TW2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
-        <scene sceneID="eTD-0s-gXc">
+        <scene sceneID="bbz-FT-65U">
             <objects>
-                <viewController id="oXe-Y9-7vW" customClass="MainViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pGg-cM-lvX">
+                <viewController id="guL-pm-TW2" customClass="MainViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lau-Pu-fvQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P8h-Mr-c8f">
-                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uw0-U6-a8A">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mza-eA-AHX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                                        <segments>
-                                            <segment title="First Name"/>
-                                            <segment title="Last Name"/>
-                                        </segments>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvc-5P-k1q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Glv-vk-Y5F">
+                                                <rect key="frame" x="107" y="0.0" width="161" height="43"/>
+                                                <segments>
+                                                    <segment title="First Name"/>
+                                                    <segment title="Last Name"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Glv-vk-Y5F" secondAttribute="bottom" id="EXK-1w-r4N"/>
+                                            <constraint firstItem="Glv-vk-Y5F" firstAttribute="top" secondItem="gvc-5P-k1q" secondAttribute="top" id="azL-iC-Mrd"/>
+                                            <constraint firstItem="Glv-vk-Y5F" firstAttribute="centerX" secondItem="gvc-5P-k1q" secondAttribute="centerX" id="eUV-9e-ai9"/>
+                                        </constraints>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu3-dx-3nl">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="577"/>
                                         <connections>
-                                            <action selector="sortStudents:" destination="oXe-Y9-7vW" eventType="valueChanged" id="sye-gy-dEg"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3l-mt-0dm">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="611"/>
-                                        <connections>
-                                            <segue destination="6iO-w3-nhn" kind="embed" identifier="EmbededStudentsTVC" id="sWP-dA-kfH"/>
+                                            <segue destination="fB5-SG-auQ" kind="embed" identifier="ContainerSegue" id="OTM-8o-N19"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -42,38 +51,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="P8h-Mr-c8f" firstAttribute="trailing" secondItem="d5w-Rp-2pr" secondAttribute="trailing" id="8Wi-Vz-uoC"/>
-                            <constraint firstItem="P8h-Mr-c8f" firstAttribute="leading" secondItem="d5w-Rp-2pr" secondAttribute="leading" id="Nif-DX-zEg"/>
-                            <constraint firstItem="P8h-Mr-c8f" firstAttribute="bottom" secondItem="d5w-Rp-2pr" secondAttribute="bottom" id="RKe-45-lSN"/>
-                            <constraint firstItem="P8h-Mr-c8f" firstAttribute="top" secondItem="d5w-Rp-2pr" secondAttribute="top" constant="8" id="ijh-sG-lYH"/>
+                            <constraint firstItem="Tvm-LD-j5I" firstAttribute="bottom" secondItem="uw0-U6-a8A" secondAttribute="bottom" id="VlV-T7-41Z"/>
+                            <constraint firstItem="Tvm-LD-j5I" firstAttribute="trailing" secondItem="uw0-U6-a8A" secondAttribute="trailing" id="vsv-bn-xHU"/>
+                            <constraint firstItem="uw0-U6-a8A" firstAttribute="top" secondItem="Tvm-LD-j5I" secondAttribute="top" constant="20" id="wMc-pT-e6V"/>
+                            <constraint firstItem="uw0-U6-a8A" firstAttribute="leading" secondItem="Tvm-LD-j5I" secondAttribute="leading" id="xGl-vl-Sx9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d5w-Rp-2pr"/>
+                        <viewLayoutGuide key="safeArea" id="Tvm-LD-j5I"/>
                     </view>
-                    <connections>
-                        <outlet property="sortSelector" destination="Mza-eA-AHX" id="dfz-tx-N0u"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CxW-OU-NLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIg-Yp-mg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.8" y="170.46476761619192"/>
+            <point key="canvasLocation" x="-226.40000000000001" y="133.5832083958021"/>
         </scene>
         <!--Students Table View Controller-->
-        <scene sceneID="uyP-uI-cRK">
+        <scene sceneID="PM6-Gz-y9I">
             <objects>
-                <tableViewController id="6iO-w3-nhn" customClass="StudentsTableViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0EU-Nd-w7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="611"/>
+                <tableViewController id="fB5-SG-auQ" customClass="StudentsTableViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a6O-VB-bZu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" textLabel="wUw-Dk-A0v" style="IBUITableViewCellStyleDefault" id="YUp-3c-hTD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" textLabel="YGf-Ii-dju" style="IBUITableViewCellStyleDefault" id="07u-kW-goR">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YUp-3c-hTD" id="IZe-Vw-W1L">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="07u-kW-goR" id="sVF-oh-38r">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wUw-Dk-A0v">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YGf-Ii-dju">
                                             <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,14 +91,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="6iO-w3-nhn" id="dTm-hj-6WS"/>
-                            <outlet property="delegate" destination="6iO-w3-nhn" id="NvB-dU-Yh4"/>
+                            <outlet property="dataSource" destination="fB5-SG-auQ" id="V9Z-kH-jcU"/>
+                            <outlet property="delegate" destination="fB5-SG-auQ" id="99B-yV-wYx"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VqO-1C-zyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2M-rX-aja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="170"/>
+            <point key="canvasLocation" x="526" y="134"/>
         </scene>
     </scenes>
 </document>

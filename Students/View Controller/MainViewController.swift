@@ -9,22 +9,44 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var sortSelector: UISegmentedControl!
+    private var studentsTableViewController: StudentsTableViewController!
+    private let networkClient = NetworkClient()
+    private var students: [Student] = [] {
+        didSet {
+            studentsTableViewController.students = students
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - App lifecycle functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        networkClient.fethcData { (students, error) in
+            if let error = error {
+                NSLog("Error getting students: \(error)")
+                return
+            }
+            
+            
+        }
     }
-    */
-
+    
+    
+    @IBAction func sort(_ sender: Any) {
+        
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ContainerSegue" {
+            let studentsTableVC = segue.destination as! StudentsTableViewController
+            studentsTableViewController = studentsTableVC
+        }
+    }
 }

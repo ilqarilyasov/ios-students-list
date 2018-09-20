@@ -18,8 +18,11 @@ class MainViewController: UIViewController {
     private var students: [Student] = [] {
         didSet {
             updateSort()
+            updateSearch()
         }
     }
+    
+    @IBOutlet weak var searchTextField: UITextField!
     
     // MARK: - App lifecycle functions
     
@@ -31,7 +34,6 @@ class MainViewController: UIViewController {
                 NSLog("Error getting students: \(error)")
                 return
             }
-            
             self.students = students ?? []
         }
     }
@@ -39,6 +41,23 @@ class MainViewController: UIViewController {
     @IBAction func sort(_ sender: Any) {
         updateSort()
     }
+    
+    @IBAction func search(_ sender: Any) {
+        updateSearch()
+    }
+    
+    // MArk: - Search function
+    
+    func updateSearch() {
+        DispatchQueue.main.async {
+            guard let term = self.searchTextField.text, !term.isEmpty else { return }
+            let searchedStudents = self.students.filter { $0.name.contains(term) }
+            self.studentsTableViewController.students = searchedStudents
+        }
+    }
+    
+    
+    // MARK: - Sort function
     
     private func updateSort() {
         DispatchQueue.main.async {

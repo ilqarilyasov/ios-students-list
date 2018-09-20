@@ -23,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvc-5P-k1q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Glv-vk-Y5F">
-                                                <rect key="frame" x="107" y="0.0" width="161" height="43"/>
+                                                <rect key="frame" x="107" y="0.0" width="161" height="29"/>
                                                 <segments>
                                                     <segment title="First Name"/>
                                                     <segment title="Last Name"/>
@@ -43,8 +43,17 @@
                                             <constraint firstItem="Glv-vk-Y5F" firstAttribute="centerX" secondItem="gvc-5P-k1q" secondAttribute="centerX" id="eUV-9e-ai9"/>
                                         </constraints>
                                     </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byM-Y5-Vq8">
+                                        <rect key="frame" x="0.0" y="36" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="search:" destination="guL-pm-TW2" eventType="editingDidEnd" id="agW-XD-vgE"/>
+                                        </connections>
+                                    </textField>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu3-dx-3nl">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="74" width="375" height="553"/>
                                         <connections>
                                             <segue destination="fB5-SG-auQ" kind="embed" identifier="ContainerSegue" id="OTM-8o-N19"/>
                                         </connections>
@@ -62,6 +71,7 @@
                         <viewLayoutGuide key="safeArea" id="Tvm-LD-j5I"/>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="byM-Y5-Vq8" id="B9l-8A-syj"/>
                         <outlet property="sortSelector" destination="Glv-vk-Y5F" id="4XO-MR-FhG"/>
                     </connections>
                 </viewController>
@@ -74,7 +84,7 @@
             <objects>
                 <tableViewController id="fB5-SG-auQ" customClass="StudentsTableViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a6O-VB-bZu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
